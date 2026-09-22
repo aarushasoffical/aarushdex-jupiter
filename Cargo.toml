@@ -6,7 +6,7 @@ rust-version = "1.85.0"
 license = "Apache-2.0"
 
 [dependencies]
-jupiter-amm-interface = { version = "=0.6.1", path = "../jupiter-amm-interface/interface" }
+jupiter-amm-interface = { version = "=0.6.1", git = "https://github.com/jup-ag/jupiter-amm-interface", rev = "95bd18485e580625a39eb92a0c0ad2061579daad" }
 rust_decimal = "1.36.0"
 solana-account = { version = "=4.3.1", features = ["serde"] }
 solana-instruction = "=3.4.0"
@@ -14,7 +14,7 @@ solana-pubkey = { version = "=4.2.0", features = ["curve25519", "wincode"] }
 solana-address = "=2.6.1"
 
 [dev-dependencies]
-jupiter-amm-test-kit = { path = "../jupiter-amm-interface/test-kit" }
+jupiter-amm-test-kit = { git = "https://github.com/jup-ag/jupiter-amm-interface", rev = "95bd18485e580625a39eb92a0c0ad2061579daad", package = "jupiter-amm-test-kit" }
 solana-compute-budget-interface = "=3.0.0"
 solana-keypair = "=3.1.2"
 solana-signer = "=3.0.1"
