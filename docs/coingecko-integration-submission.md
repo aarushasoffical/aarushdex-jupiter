@@ -100,19 +100,19 @@ Let:
 - \(X\) = current human-unit base-token reserve.
 - \(Y\) = current human-unit target-token reserve.
 - \(P_0 = Y/X\) = current marginal price in target units per base unit.
-- \(f = \\mathrm{fee\\_bps}/10{,}000\) = input fee fraction.
+- \(f = \mathrm{fee\_bps}/10{,}000\) = input fee fraction.
 - \(USD_B\) and \(USD_T\) = trusted USD reference prices for the base and target assets.
 
 For \(R > 1\), define the required gross-input fraction:
 
-\\[
-T(R,f)=\\frac{-(2-f)+\\sqrt{(2-f)^2+4(1-f)(R-1)}}{2(1-f)}
-\\]
+\[
+T(R,f)=\frac{-(2-f)+\sqrt{(2-f)^2+4(1-f)(R-1)}}{2(1-f)}
+\]
 
 Subject to the fee-retention assumption above:
 
-- **Price rises by 2%:** target-token gross input is \(Y \\times T(1.02,f)\). The USD depth on that side is \(Y \\times T(1.02,f) \\times USD_T\).
-- **Price falls by 2%:** base-token gross input is \(X \\times T(1/0.98,f)\). The USD depth on that side is \(X \\times T(1/0.98,f) \\times USD_B\).
+- **Price rises by 2%:** target-token gross input is \(Y \times T(1.02,f)\). The USD depth on that side is \(Y \times T(1.02,f) \times USD_T\).
+- **Price falls by 2%:** base-token gross input is \(X \times T(1/0.98,f)\). The USD depth on that side is \(X \times T(1/0.98,f) \times USD_B\).
 
 This models the gross input needed to move the marginal spot price from \(P_0\) to \(1.02P_0\) or \(0.98P_0\) under the stated constant-product and fee-retention assumptions. If the deployed program routes fees outside the pool, the equation must be adjusted. USD prices must come from a documented source and be consistent with the prices displayed on the AarushDEX trading interface. Do not publish the resulting depth values until the formula passes parity tests against actual on-chain swaps.
 
